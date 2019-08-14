@@ -1,13 +1,12 @@
 import React from "react";
+import ImageGrid from "./components/ImageGrid";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <h1>NASA API</h1>
+      <ImageGrid/>
     </div>
   );
 }
