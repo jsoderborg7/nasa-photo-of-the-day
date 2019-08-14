@@ -3,28 +3,20 @@ import axios from "axios";
 import ImageCard from "./ImageCard";
 
 export default function ImageGrid() {
-  const [images, setImage] = useState([]);
+  const [nasaImg, setNasaImg] = useState([]);
+    console.log(nasaImg);
 
   useEffect(() => {
     // axios.get(`https://api.nasa.gov/planetary/apod?api_key=rSkMBbZioFkicJWaH4Lx7MX5KteFKZSHOi3BV4f3`)
     .then(response => {
-      const images = response.data;
-      console.log(images);
-      setImage(images);
-    });
-  }, []);
+      setNasaImg(response.data)
+    }) .catch((error) =>{
+      console.log(error)
+    })
+  },[])
   return (
-    <div className="image">
-      {images.map(image =>{
-        return (
-          <ImageCard
-            key={image.id}
-            id={image.id}
-            title={image.title}
-            description={image.description}
-          />
-        );
-      })}
+    <div className="Image">
+      <ImageCard/>
     </div>
   );
 }
