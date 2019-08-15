@@ -5,38 +5,34 @@ import Explanation from "./Explanation";
 import Media from "./Media";
 import Title from "./Title";
 
-function ImageCard() {
-  const [nasa, setNasa]= useState();
-  console.log(nasa);
 
-  useEffect(() =>{
-    axios.get(`https://api.nasa.gov/planetary/apod?api_key=rSkMBbZioFkicJWaH4Lx7MX5KteFKZSHOi3BV4f3`)
-    .then(response =>{
-      setNasa(response.data)
-    })
-    .catch(error =>{
-      console.log(error)
-    })
-  }, [] );
 
-  let date = null;
-  let explanation = null;
-  let url = null;
-  let title = null;
+const ImageCard = () => {
+  const [title, setTitle] = useState();
+  const [date, setDate] = useState();
+  const [media, setMedia] = useState();
+  const [explanation, setExplanation] = useState();
 
-   if(nasa) {
-    date = nasa.date;
-    explanation = nasa.explanation;
-    url = nasa.url;
-    title = nasa.title;
-  }
+  useEffect(() => {
+    axios
+      .get(`https://api.nasa.gov/planetary/apod?api_key=rSkMBbZioFkicJWaH4Lx7MX5KteFKZSHOi3BV4f3`)
+      .then(response => {
+        setTitle(response.data.title);
+        setDate(response.data.date);
+        setMedia(response.data.url);
+        setExplanation(response.data.explanation);
+        console.log(response);
+      });
+  },[]);
 
-  return(
+  return (
     <div className="container">
-      <Title title={title}/>
-      <Date date={date} />
-      <Media url={url}/>
-      <Explanation explanation={explanation}/>
+      <>
+        <Title title = {title}/>
+        <Date date = {date}/>
+        <Media media = {media}/>
+        <Explanation explanation = {explanation}/>
+      </>
     </div>
   )
 }

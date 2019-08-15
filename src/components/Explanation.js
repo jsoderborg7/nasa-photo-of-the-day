@@ -1,8 +1,9 @@
 import React from "react";
+import ImageCard from "./ImageCard";
 
-const Explanation = ( {explanation} ) => {
+const Explanation = props => {
   return(
-    <p>{explanation}</p>
+    <p>{props.explanation}</p>
   )
 };
 

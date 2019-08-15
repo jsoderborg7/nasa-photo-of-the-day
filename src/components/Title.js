@@ -1,8 +1,9 @@
 import React from "react";
+import ImageCard from "./ImageCard";
 
-const Title = ( {title} ) => {
+const Title = props => {
   return(
-    <h2>{title}</h2>
+    <h2>{props.title}</h2>
   )
 };
 

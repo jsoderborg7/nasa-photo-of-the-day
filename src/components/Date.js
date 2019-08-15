@@ -1,8 +1,9 @@
 import React from "react";
+import ImageCard from "./ImageCard";
 
-const Date = ( {date} ) => {
+const Date = props => {
   return(
-    <p>{date}</p>
+    <h3>{props.date}</h3>
   )
 };
 
