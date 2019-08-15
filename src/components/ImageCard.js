@@ -4,6 +4,7 @@ import Date from "./Date";
 import Explanation from "./Explanation";
 import Media from "./Media";
 import Title from "./Title";
+import GlobalStyle from "../styles/GlobalStyle";
 
 
 
@@ -32,6 +33,7 @@ const ImageCard = () => {
         <Date date = {date}/>
         <Media media = {media}/>
         <Explanation explanation = {explanation}/>
+        <GlobalStyle />
       </>
     </div>
   )
