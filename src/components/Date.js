@@ -12,9 +12,10 @@ const Date = props => {
 const StyledDate = styled.h3 `
   font-size: 1.5rem;
   font-family: "Space Mono";
-  width: 100%;
-  padding-left: 17%;
-  margin: auto;
+
+  @media screen and (max-width: 500px){
+    font-size: 1rem;
+  }
 `
 
 export default Date;

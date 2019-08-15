@@ -5,7 +5,7 @@ import Explanation from "./Explanation";
 import Media from "./Media";
 import Title from "./Title";
 import GlobalStyle from "../styles/GlobalStyle";
-
+import styled from "styled-components";
 
 
 const ImageCard = () => {
@@ -27,16 +27,27 @@ const ImageCard = () => {
   },[]);
 
   return (
-    <div className="container">
+    <div>
       <>
         <Title title = {title}/>
-        <Date date = {date}/>
-        <Media media = {media}/>
+        <StyledContent>
+          <div>
+            <Date date = {date}/>
+            <Media media = {media}/>
+          </div>
+        </StyledContent>
         <Explanation explanation = {explanation}/>
         <GlobalStyle />
       </>
     </div>
   )
 }
+
+const StyledContent = styled.div `
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+`;
 
 export default ImageCard;

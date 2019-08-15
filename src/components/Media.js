@@ -14,8 +14,11 @@ const Media = props => {
 const StyledMedia = styled.div `
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin: auto;
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 export default Media;
