@@ -3,14 +3,15 @@ import ImageCard from "./components/ImageCard";
 import "./App.css";
 import styled from "styled-components";
 
+
 function App() {
   return(
-    <StyledApp>
-      <div className="container">
-        <h1>NASA Picture of the Day</h1>
-        <ImageCard />
-      </div>
-    </StyledApp>
+      <StyledApp>
+        <div className="container">
+          <h1>NASA Picture of the Day</h1>
+          <ImageCard />
+        </div>
+      </StyledApp>
   )
 }
 

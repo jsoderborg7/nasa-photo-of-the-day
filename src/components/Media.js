@@ -11,6 +11,8 @@ const Media = props => {
   )
 }
 
+
+
 const StyledMedia = styled.div `
   display: flex;
   justify-content: center;
@@ -19,6 +21,7 @@ const StyledMedia = styled.div `
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    border: 2px solid grey;
   }
 `;
 
